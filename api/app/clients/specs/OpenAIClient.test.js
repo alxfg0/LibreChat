@@ -1,4 +1,6 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const OpenAI = require('openai');
 const { fetchEventSource } = require('@waylaidwanderer/fetch-event-source');
 const { genAzureChatCompletion } = require('~/utils/azureUtils');

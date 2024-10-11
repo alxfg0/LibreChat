@@ -1,4 +1,6 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const { KeyvFile } = require('keyv-file');
 const { Constants, EModelEndpoint } = require('librechat-data-provider');
 const { getUserKey, checkUserKeyExpiry } = require('../server/services/UserService');
